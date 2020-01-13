@@ -1,6 +1,3 @@
 # Default ignored files
-/IStudent.class 
-/Main.class
-/Person.class
-/Student.class
-/.idea/
+*
+!Main.java
