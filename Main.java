@@ -10,7 +10,7 @@ class Main
 interface IStudent 
 {
   int getResults();
-  int getsStatus();
+  String getsStatus();
 }
 
 class Student implements IStudent 
