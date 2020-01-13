@@ -4,6 +4,7 @@ class Main
   {
     Student obj = new Student();
     obj.getResults();
+    obj.getsStatus();
   }
 }
 
@@ -34,5 +35,6 @@ class Student implements IStudent
 
 abstract class Person
 {
-  String name,surname,age,gender;
+  String name, surname, gender;
+  int age;
 }
