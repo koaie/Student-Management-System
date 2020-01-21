@@ -2,7 +2,7 @@
 *
 !build.xml
 !manifest.mf
-!nbproject/
-!src/
+!/nbproject/
+!/src/
 !students.csv
 
