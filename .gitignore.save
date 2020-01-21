@@ -1,0 +1,3 @@
+# Default ignored files
+build.xml  manifest.mf  nbproject  src  students.csv
+*
