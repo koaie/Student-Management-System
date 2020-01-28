@@ -7,10 +7,11 @@ import javax.swing.*;
 import java.awt.event.*; 
 import javax.swing.filechooser.*; 
 
-public class Menu extends javax.swing.JFrame {
+public class Menu extends javax.swing.JFrame 
+{
     List list = new List();
     DefaultTableModel tableModel;
-    
+
    int
    namePos = 0,
    surnamePos = 1,
@@ -22,9 +23,10 @@ public class Menu extends javax.swing.JFrame {
    resultPos = 7,
    statusPos = 8;
 
-    public Menu() {
+    public Menu()
+    {
         initComponents();
-        
+
         addCol("Name");
         addCol("Surname");
         addCol("Gender");
@@ -34,15 +36,16 @@ public class Menu extends javax.swing.JFrame {
         addCol("Course");
         addCol("Results");
         addCol("Status");
-        
+
         list.load(list.fileName);
         fetchStudentList();
     }
-    
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         SaveButton = new javax.swing.JButton();
         RefreshButton = new javax.swing.JButton();
@@ -50,12 +53,13 @@ public class Menu extends javax.swing.JFrame {
         DeleteStudentButton = new javax.swing.JButton();
         EditStudentButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable = new javax.swing.JTable() {
-            public boolean isCellEditable(int row, int column) {
+        jTable = new javax.swing.JTable()
+	{
+            public boolean isCellEditable(int row, int column)
+	    {
                 return false;
             };
-        }
-        ;
+        };
         ExitButton = new javax.swing.JButton();
         SaveAsButton = new javax.swing.JButton();
         OpenFileButton = new javax.swing.JButton();
@@ -67,36 +71,46 @@ public class Menu extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1280, 960));
 
         SaveButton.setText("Save");
-        SaveButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        SaveButton.addActionListener(new java.awt.event.ActionListener()
+	{
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+	    {
                 SaveButtonActionPerformed(evt);
             }
         });
 
         RefreshButton.setText("Refresh");
-        RefreshButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        RefreshButton.addActionListener(new java.awt.event.ActionListener()
+	{
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+	    {
                 RefreshButtonActionPerformed(evt);
             }
         });
 
         NewStudentButton.setText("New");
-        NewStudentButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        NewStudentButton.addActionListener(new java.awt.event.ActionListener()
+	{
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+	    {
                 NewStudentButtonActionPerformed(evt);
             }
         });
 
         DeleteStudentButton.setText("Del");
-        DeleteStudentButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        DeleteStudentButton.addActionListener(new java.awt.event.ActionListener()
+	{
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+	    {
                 DeleteStudentButtonActionPerformed(evt);
             }
         });
 
         EditStudentButton.setText("Edit");
-        EditStudentButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        EditStudentButton.addActionListener(new java.awt.event.ActionListener()
+	{
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+	    {
                 EditStudentButtonActionPerformed(evt);
             }
         });
@@ -104,22 +118,28 @@ public class Menu extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable);
 
         ExitButton.setText("Exit");
-        ExitButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ExitButton.addActionListener(new java.awt.event.ActionListener()
+	{
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+	    {
                 ExitButtonActionPerformed(evt);
             }
         });
 
         SaveAsButton.setText("Save as");
-        SaveAsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        SaveAsButton.addActionListener(new java.awt.event.ActionListener()
+	{
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+	    {
                 SaveAsButtonActionPerformed(evt);
             }
         });
 
         OpenFileButton.setText("Open file");
-        OpenFileButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        OpenFileButton.addActionListener(new java.awt.event.ActionListener()
+	{
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+	    {
                 OpenFileButtonActionPerformed(evt);
             }
         });
@@ -174,16 +194,19 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
+    private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt)
+    { //GEN-FIRST:event_SaveButtonActionPerformed
              list.save(list.fileName);
     }//GEN-LAST:event_SaveButtonActionPerformed
 
-    private void RefreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshButtonActionPerformed
+    private void RefreshButtonActionPerformed(java.awt.event.ActionEvent evt)
+    {//GEN-FIRST:event_RefreshButtonActionPerformed
     deleteElements();
     fetchStudentList();
     }//GEN-LAST:event_RefreshButtonActionPerformed
 
-    private void EditStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditStudentButtonActionPerformed
+    private void EditStudentButtonActionPerformed(java.awt.event.ActionEvent evt)
+    {//GEN-FIRST:event_EditStudentButtonActionPerformed
         String input = JOptionPane.showInputDialog(null, "Student: " + list.getNode(jTable.getSelectedRow(), 0), JOptionPane.QUESTION_MESSAGE);
         if(!input.isEmpty())
         {
@@ -197,7 +220,8 @@ public class Menu extends javax.swing.JFrame {
         fetchStudentList();
     }//GEN-LAST:event_EditStudentButtonActionPerformed
 
-    private void NewStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewStudentButtonActionPerformed
+    private void NewStudentButtonActionPerformed(java.awt.event.ActionEvent evt)
+    {//GEN-FIRST:event_NewStudentButtonActionPerformed
         String name = JOptionPane.showInputDialog(null, "Name: ", JOptionPane.QUESTION_MESSAGE);
         String surname = JOptionPane.showInputDialog(null, "Surname: ", JOptionPane.QUESTION_MESSAGE);
         String gender = JOptionPane.showInputDialog(null, "Gender: ", JOptionPane.QUESTION_MESSAGE);
@@ -215,61 +239,65 @@ public class Menu extends javax.swing.JFrame {
         fetchStudentList();
     }//GEN-LAST:event_NewStudentButtonActionPerformed
 
-    private void DeleteStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteStudentButtonActionPerformed
+    private void DeleteStudentButtonActionPerformed(java.awt.event.ActionEvent evt)
+    {//GEN-FIRST:event_DeleteStudentButtonActionPerformed
         list.removeStudent(jTable.getSelectedRow());
         deleteElements();
         fetchStudentList();
     }//GEN-LAST:event_DeleteStudentButtonActionPerformed
 
-    private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
+    private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt)
+    {//GEN-FIRST:event_ExitButtonActionPerformed
         list.exit();
     }//GEN-LAST:event_ExitButtonActionPerformed
 
-    private void SaveAsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveAsButtonActionPerformed
+    private void SaveAsButtonActionPerformed(java.awt.event.ActionEvent evt)
+    {//GEN-FIRST:event_SaveAsButtonActionPerformed
         JFileChooser jfs = new JFileChooser("./");
         jfs.setAcceptAllFileFilterUsed(false);
         jfs.addChoosableFileFilter(new FileNameExtensionFilter(".csv", "csv"));
         jfs.showSaveDialog(null);
-        
+
         File file = new File(jfs.getSelectedFile().getAbsolutePath());
-        
+
         list.save(file.toString());
     }//GEN-LAST:event_SaveAsButtonActionPerformed
 
-    private void OpenFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenFileButtonActionPerformed
+    private void OpenFileButtonActionPerformed(java.awt.event.ActionEvent evt)
+    {//GEN-FIRST:event_OpenFileButtonActionPerformed
         JFileChooser jfs = new JFileChooser("./");
         jfs.setAcceptAllFileFilterUsed(false);
         jfs.addChoosableFileFilter(new FileNameExtensionFilter(".csv", "csv"));
         jfs.showOpenDialog(null);
-        
+
         File file = new File(jfs.getSelectedFile().getAbsolutePath());
-        
+
         list.studentList.clear();
         deleteElements();
-        
+
         list.fileName = file.toString();
         list.load(list.fileName);
         fetchStudentList();
     }//GEN-LAST:event_OpenFileButtonActionPerformed
-    
+
     void addCol(String value)
     {
         tableModel = (DefaultTableModel) jTable.getModel();
         tableModel.addColumn(value);
     }
-    
+
     void addRow(Object[] value)
     {
         tableModel = (DefaultTableModel) jTable.getModel();
         tableModel.addRow(value);
     }
-    
+
     void deleteElements()
     {
         tableModel.getDataVector().removeAllElements();
         tableModel.fireTableDataChanged();
     }
-    
+
     void fetchStudentList()
     {
     for(int i = 0; i < list.totalStudents();i++)
@@ -280,10 +308,14 @@ public class Menu extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+    public static void main(String args[])
+    {
+        try
+        {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
+            {
+                if ("Nimbus".equals(info.getName()))
+                {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

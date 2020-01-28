@@ -23,7 +23,7 @@ class Main
 class List
 {
    ArrayList<Student> studentList = new ArrayList<>();  //Declaring an arraylist to store linkedlists of students
-   String fileName = "./students.csv";
+   String fileName = "./students.csv"; //File to Load/Save from/to
    //declaring variables for node index values of data.
    int namePos = 0,
    surnamePos = 1,
@@ -66,6 +66,7 @@ class List
            {
                for(int j = 0;j < studentList.get(i).studentInfo.size();j++)
                {
+                   // If last element dont inset a comma, otherwise insert comma
                    if(j == studentList.get(i).studentInfo.size() -1)
                    {
                        bw.write(studentList.get(i).studentInfo.get(j));
@@ -75,13 +76,13 @@ class List
                        bw.write(studentList.get(i).studentInfo.get(j) + ",");
                    }
                }
-               bw.write("\n");
-               insertAge(i);
+               bw.write("\n"); //Insert newline to file
+               insertAge(i); // Readd the age node
            }
        }
        catch (Exception e)  //Catch error
        {
-           System.out.println(e.toString());
+           System.out.println(e.toString()); //Print error
        }
    }
    
@@ -161,6 +162,7 @@ class List
 
 interface IStudent 
 {
+  //Declare two interfaces
   String getResults();
   String getsStatus();
 }
