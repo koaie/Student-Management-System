@@ -4,7 +4,6 @@ import java.io.*;
 import java.time.LocalDate;
 import java.time.Period;
 
-
 class Main
 {
   public static void main(String[] args)
@@ -44,6 +43,7 @@ class List
         while((line = br.readLine()) != null)
         {
             String[] data = line.split(",");    //Split the data to variables, marked by ","
+            // Name, Surname, Gender, Birthdate(yyyy-mm-dd), ID, Course, results, status
             newStudent(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7]);    //Call newstudent and pass the array as data
         }
     } 
